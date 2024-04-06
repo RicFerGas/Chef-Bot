@@ -1,0 +1,297 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: affirm
+  - action: utter_are_you_vegetarian
+  - intent: affirm
+  - action: action_is_vegetarian
+  - intent: exclude_ingredients
+  - action: action_recommend_recipe
+  - intent: choose_recipe
+  - action: action_show_recipe
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: vegetarian  path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: affirm
+  - action: utter_are_you_vegetarian
+  - intent: denny
+  - action: action_is_vegetarian
+  - intent: exclude_ingredients
+  - action: action_recommend_recipe
+  - intent: choose_recipe
+  - action: action_show_recipe
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: vegetarian just confirm
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: affirm
+  - action: utter_are_you_vegetarian
+  - intent: affirm
+  - action: action_is_vegetarian
+  - intent: exclude_ingredients
+  - action: action_recommend_recipe
+  - intent: choose_recipe
+  - action: action_show_recipe
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: vegetarian just confirm 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: affirm
+  - action: utter_are_you_vegetarian
+  - intent: denny
+  - action: action_is_vegetarian
+  - intent: exclude_ingredients
+  - action: action_recommend_recipe
+  - intent: choose_recipe
+  - action: action_show_recipe
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: error in ingredients
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: denny
+  - action: action_restart_ingredients
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: affirm 
+  - action: utter_are_you_vegetarian
+  - intent: affirm
+  - action: action_is_vegetarian
+  - intent: exclude_ingredients
+  - action: action_recommend_recipe
+  - intent: choose_recipe
+  - action: action_show_recipe
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: error in ingredients 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: denny
+  - action: action_restart_ingredients
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: affirm 
+  - action: utter_are_you_vegetarian
+  - intent: denny
+  - action: action_is_vegetarian
+  - intent: exclude_ingredients
+  - action: action_recommend_recipe
+  - intent: choose_recipe
+  - action: action_show_recipe
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: error in ingredients different options
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: denny
+  - action: action_restart_ingredients
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: affirm 
+  - action: utter_are_you_vegetarian
+  - intent: denny
+  - action: action_is_vegetarian
+  - intent: exclude_ingredients
+  - action: action_recommend_recipe
+  - intent: more_options
+  - action: action_recommend_another_recipe
+  - intent: more_options
+  - action: action_recommend_another_recipe
+  - intent: choose_recipe
+  - action: action_show_recipe
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: error in ingredients enhanced query
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: denny
+  - action: action_restart_ingredients
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: affirm
+  - action: utter_are_you_vegetarian
+  - intent: affirm
+  - action: action_is_vegetarian
+  - intent: exclude_ingredients
+  - action: action_recommend_recipe
+  - intent: more_options
+  - action: action_recommend_another_recipe
+  - intent: more_options
+  - action: action_recommend_another_recipe
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: affirm
+  - action: action_recommend_recipe
+  - intent: choose_recipe
+  - action: action_show_recipe
+  - intent: affirm
+  - action: utter_goodbye
+
+
+
+- story: more options please
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: affirm
+  - action: utter_are_you_vegetarian
+  - intent: denny
+  - action: action_is_vegetarian
+  - intent: exclude_ingredients
+  - action: action_recommend_recipe
+  - intent: more_options
+  - action: action_recommend_another_recipe
+  - intent: choose_recipe
+  - action: action_show_recipe
+  - intent: affirm
+  - action: utter_goodbye
+- story: even more options please
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: affirm
+  - action: utter_are_you_vegetarian
+  - intent: denny
+  - action: action_is_vegetarian
+  - intent: exclude_ingredients
+  - action: action_recommend_recipe
+  - intent: more_options
+  - action: action_recommend_another_recipe
+  - intent: more_options
+  - action: action_recommend_another_recipe
+  - intent: choose_recipe
+  - action: action_show_recipe
+  - intent: affirm
+  - action: utter_goodbye
+- story: Lets enhance the query
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: affirm
+  - action: utter_are_you_vegetarian
+  - intent: affirm
+  - action: action_is_vegetarian
+  - intent: exclude_ingredients
+  - action: action_recommend_recipe
+  - intent: more_options
+  - action: action_recommend_another_recipe
+  - intent: more_options
+  - action: action_recommend_another_recipe
+  - intent: include_ingredients
+  - action: action_confirm_ingredients
+  - intent: affirm
+  - action: action_recommend_recipe  
+  - intent: choose_recipe
+  - action: action_show_recipe
+  - intent: affirm
+  - action: utter_goodbye
+# - story: dont like path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: include_ingredients
+#   - action: action_confirm_ingredients
+#   - intent: affirm
+#   - action: action_recommend_recipe
+#   - intent: denny
+#   - action: action_recommend_another_recipe
+#   - action: utter_goodbye
+
+# - story: sad path 1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
+
+# - story: sad path 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_goodbye
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: include_ingredients
+#     entities:
+#     - ingredients: onion
+#     - ingredients: tomato
+#     - ingredients: eggs
+#   - action: action_confirm_ingredients
+#   - intent: affirm
+#   - action: action_recommend_recipe
+#   - intent: affirm
+#   - action: utter_goodbye
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: include_ingredients
+#     entities:
+#     - ingredients: chocolate
+#     - ingredients: banana
+#     - ingredients: butter
+#   - action: action_confirm_ingredients
+#   - intent: affirm
+#   - action: action_recommend_recipe
+#   - intent: choose_recipe
+#     entities:
+#     - selected_recipe_index: 67883
+#   - action: action_show_recipe
+#   - intent: goodbye
+#   - action: utter_goodbye

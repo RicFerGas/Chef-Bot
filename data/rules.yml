@@ -1,0 +1,13 @@
+version: "3.1"
+
+# rules:
+
+# - rule: Say goodbye anytime the user accepts a recipie
+#   steps:
+
+#   - intent: choose_recipe
+#   - action: action_show_recipe
+#   - intent: affirm
+#   - action: utter_goodbye
+
+

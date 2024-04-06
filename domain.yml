@@ -1,0 +1,76 @@
+version: '3.1'
+intents:
+- affirm
+- choose_recipe
+- denny
+- exclude_ingredients
+- goodbye
+- greet
+- include_ingredients
+- more_options
+- prefer_vegetarian
+entities:
+- ingredients
+- selected_recipe_index
+- excluded_ingredients
+
+slots:
+  ingredients:
+    type: list
+    mappings:
+    - type: from_entity
+      entity: ingredients
+  ingredients_list:
+    type: list
+    mappings:
+    - type: custom
+      value: []
+  prefer_vegetarian:
+    type: bool
+    influence_conversation: false
+    mappings:
+    - type: from_intent
+      intent: prefer_vegetarian
+      value: False
+  excluded_ingredients:
+    type: list
+    mappings:
+    - type: from_entity
+      entity: excluded_ingredients
+  recommended_recipe_indexes:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: custom
+      value: []
+  selected_recipe_index:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: selected_recipe_index
+responses:
+  utter_greet:
+  - text: Hey! I am your personal sous-chef, tell me what ingredients we have on hand?
+  utter_goodbye:
+  - text: Goodbye, have a great day!
+  add_more_ingredients:
+  - text: Lets explore a little further... what other ingredients do you have?
+  utter_exclude_ingredients:
+  - text: Do you have any ingredient(s) that you dont like or dont want to cook with?
+  utter_are_you_vegetarian:
+  - text: Are you vegetarian?
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- utter_greet
+- action_recommend_recipe
+- action_confirm_ingredients
+- action_show_recipe
+- utter_goodbye
+- action_recommend_another_recipe
+- utter_exclude_ingredients
+- action_restart_ingredients
+- utter_are_you_vegetarian
+- action_is_vegetarian

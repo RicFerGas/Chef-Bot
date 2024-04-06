@@ -1,0 +1,4 @@
+df_filtred_clean_vegetarian.csv
+embeddings_cleanData.pkl
+.rasa/cache/
+venv/
